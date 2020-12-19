@@ -1,13 +1,21 @@
-public abstract class Decorator implements Receipt {
-    private Receipt trailer;
+public abstract class Decorator {
+    Decorator item;
+    String ingredient;
 
-    public Decorator(Receipt r) {
-        trailer = r;
+    public Decorator() {
+
     }
 
-    protected void callTrailer()  {
-        trailer.prtReceipt();
+    public Decorator(String ingredient, Decorator item) {
+        this.ingredient = ingredient;
+        this.item = item;
     }
 
-    public abstract void prtReceipt();
+    public void printItem() {
+        item.printItem();
+        System.out.print(item instanceof MenuItem ? "\t" : ", ");
+        System.out.print(ingredient);
+    }
+
+    public abstract Double getPrice();
 }
