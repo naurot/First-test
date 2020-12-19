@@ -1,3 +1,4 @@
+// PostDecorator Class
 public class PostDecorator extends Decorator {
     private AddOn a;
 
